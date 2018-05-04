@@ -44,6 +44,14 @@ int isPalavraChave(std::string str) {
 	return false;
 }
 
+int isBooleano(std::string str) {
+	unsigned int i;
+	for (i = 0; i < booleanos.size(); i++)
+		if (std::find(booleanos.begin(), booleanos.end(), str) != booleanos.end())
+			return true;
+	return false;
+}
+
 void montaTabela(std::ifstream &is, std::vector<Token> *tabela) {
 	int linha = 1;
 	char c;

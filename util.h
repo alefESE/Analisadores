@@ -1,7 +1,6 @@
 #pragma once
 #include "stdafx.h"
 
-#define MAX 10
 //variaveis globais
 static std::vector<std::string> palavras_chave = {
 	"program", "var", "integer", "real", "boolean", "procedure", "begin", "end", "if", "then", "else",
@@ -26,13 +25,19 @@ static std::vector<std::string> mul_op = {
 	"*", "/", "and"
 };
 
+static std::vector<std::string> booleanos = {
+	"true", "false"
+};
+
 enum retornos {
 	CHAMADA_DE_PROGRAMA,
 	ARQUIVO,
 	SUCESSO,
 	INESPERADO,
-	SINTAX
+	SINTAX,
+	SEMANTICO
 };
 
 void printErroExitArg(std::string tipo, std::vector<Token> *tabela, int idx);
 void printErroExit(std::string tipo, int linha);
+void printErroSemantico(std::string mensagem, int linha);

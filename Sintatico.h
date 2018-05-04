@@ -73,7 +73,7 @@ int termo(std::vector<Token> *tabela, int idx);
 //termo$->'MUL_OP' fator termo$ | $
 int termo$(std::vector<Token> *tabela, int idx);
 /*fator-> 'id' | 'id' '(' lista_de_expressoes ')'
-| 'NUMMERO_INTEIRO' | NUMERO_REAL | true | false
+| 'NUMERO_INTEIRO' | NUMERO_REAL | true | false
 | '(' expressao ')' | 'not' fator
 */
 int fator(std::vector<Token> *tabela, int idx);

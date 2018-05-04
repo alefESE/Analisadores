@@ -15,3 +15,10 @@ void printErroExit(std::string tipo, int linha) {
 	system("pause");
 	exit(SINTAX);
 }
+
+void printErroSemantico(std::string mensagem, int linha) {
+	std::cout << "Erro semantico na linha: " << linha << "."
+		<< mensagem << "." << std::endl;
+	system("pause");
+	exit(SEMANTICO);
+}

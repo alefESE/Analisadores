@@ -2,8 +2,9 @@
 
 void sintax(std::vector<Token> *tabela) {
 	int idx = 0;
-	if (tabela->at(idx).getValor() == "program") 
-		if (tabela->at(++idx).getTipo() == Token::getTipos(IDENTIFICADOR)) 
+	if (tabela->at(idx).getValor() == "program") {
+		if (tabela->at(++idx).getTipo() == Token::getTipos(IDENTIFICADOR)) {
+			tabela->at(idx).setValor(Token::getTipos(IDENTIFICADOR_PROGRAMA));
 			if (tabela->at(++idx).getValor() == ";") {
 				idx = declaracao_variaveis(tabela, ++idx);
 				idx = declaracoes_de_subporgramas(tabela, idx);
@@ -13,10 +14,12 @@ void sintax(std::vector<Token> *tabela) {
 				else
 					printErroExitArg("Delimitador: '.'", tabela, idx);
 			}
-			else 
+			else
 				printErroExitArg("Delimitador: ';'", tabela, idx);
-		else 
+		}
+		else
 			printErroExitArg("Identificador", tabela, idx);
+	}
 	else 
 		printErroExitArg("Palavra Chave: 'program'", tabela, idx);
 }
@@ -109,6 +112,7 @@ int declaracoes_de_subporgramas$(std::vector<Token> *tabela, int idx) {
 int declaracao_de_subprograma(std::vector<Token> *tabela, int idx) {
 	if (tabela->at(idx).getValor() == "procedure")
 		if (tabela->at(++idx).getTipo() == Token::getTipos(IDENTIFICADOR)) {
+			tabela->at(idx).setValor(Token::getTipos(IDENTIFICADOR_PROGRAMA));
 			idx = argumentos(tabela, ++idx);
 			if (tabela->at(idx).getValor() == ";") {
 				idx = declaracao_variaveis(tabela, ++idx);
@@ -351,17 +355,25 @@ int fator(std::vector<Token> *tabela, int idx) {
 			else
 				printErroExitArg("Delimitador: ')'", tabela, idx);
 		}
-		else 
+		else
 			return ++idx;
 	}
-	else if (tabela->at(idx).getTipo() == Token::getTipos(NUMERO_INTEIRO))
+	else if (tabela->at(idx).getTipo() == Token::getTipos(NUMERO_INTEIRO)) {
+		//PcT.push_back(Token::getTipos(NUMERO_INTEIRO));
 		return ++idx;
-	else if (tabela->at(idx).getTipo() == Token::getTipos(NUMERO_REAL))
+	}
+	else if (tabela->at(idx).getTipo() == Token::getTipos(NUMERO_REAL)) {
+		//PcT.push_back(Token::getTipos(NUMERO_REAL));
 		return ++idx;
-	else if (tabela->at(idx).getValor() == "true")
+	}
+	else if (tabela->at(idx).getValor() == "true") { 
+		//PcT.push_back(Token::getTipos(BOOLEANO));
 		return ++idx;
-	else if (tabela->at(idx).getValor() == "false")
+	}
+	else if (tabela->at(idx).getValor() == "false") {
+		//PcT.push_back(Token::getTipos(BOOLEANO));
 		return ++idx;
+	}
 	else if (tabela->at(idx).getValor() == "(") {
 		idx = expressao(tabela, ++idx);
 		if (tabela->at(idx).getValor() == ")")

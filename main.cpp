@@ -43,6 +43,7 @@ int main(int argc, char* argv[]) {
 
 	try {
 		sintax(&tabela);
+		semantico(&tabela);
 	}
 	catch (const std::out_of_range &ex) {
 		std::cout << "Out of range: " << ex.what() << std::endl;

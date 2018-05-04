@@ -4,6 +4,7 @@
 //tipos_token enum
 enum tipos_token : char {
 	IDENTIFICADOR,
+	IDENTIFICADOR_PROGRAMA,
 	PALAVRA_CHAVE,
 	NUMERO_INTEIRO,
 	NUMERO_REAL,
@@ -37,9 +38,10 @@ private:
 	std::string tipo;
 	std::string valor;
 	int linha;
+	bool escopo;
 };
 
 const std::string tiposString[] = {
-	"Identificador", "Palavra reservada", "Numero inteiro", "Numero real", "Delimitador", "Atribuicao",
-	"Operador relacional", "Operador aditivo", "Operador multiplicativo"
+	"Identificador", "Identificador programa", "Palavra reservada", "Inteiro", "Real",
+	"Delimitador", "Atribuicao", "Operador relacional", "Operador aditivo", "Operador multiplicativo"
 };
