@@ -56,15 +56,16 @@ Compiladores <arquivo>(extensao .pas)
 * ##### Regra dois (INCOMPLETO):
    * Devem ser identificadas atribuicoes e inicializacoes invalidas de variaveis. Por exemplo, variaveis do tipo boolean recebendo numeros. 
    * A seguinte tabela para operacoes aritmeticas deve ser observada para a operacao: V3 := V1 op V2 
+
 | V1 | V2 | V3 | Validade |
-| -- | -- | -- | -------- |
+| :---: | :---: | :---: | :---: |
 | Integer | Integer | Integer | OK | 
-| Integer | Real | Integer|  Invalido |
-| Real | Integer | Integer|  Invalido |
+| Integer | Real | Integer | Invalido |
+| Real | Integer | Integer | Invalido |
 | Real | Real | Integer | Invalido | 
 | Integer | Integer | Real | OK |
 | Integer | Real | Real | OK | 
 | Real | Integer | Real | OK | 
-| Real | Real | Real | OK| 
+| Real | Real | Real | OK | 
  
    * Obviamente, operacoes relacionais so podem ser realizadas entre valores numericos, enquanto operacoes logicas entre valores booleanos
