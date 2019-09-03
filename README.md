@@ -1,9 +1,9 @@
-﻿# Analisadores
+# Analisadores
 ### Uso:
 
 Compiladores <arquivo>(extensao .pas)
 
-### Token (Lexico)
+### Token (Léxico)
 
 * Letra: [a-zA-Z]
 * Digito: [0-9]
@@ -19,7 +19,7 @@ Compiladores <arquivo>(extensao .pas)
 * OperadorAdt: + | - | or
 * OperadorMul: * | / | and
 
-### Gramatica (sintatico)
+### Gramatica (Sintático)
 
 * programa →  program id; declaracoes_variaveis declaracoes_de_subprogramas comando_composto . 
 * declaracoes_variaveis → var lista_declaracoes_variaveis  | ε 
@@ -47,7 +47,7 @@ Compiladores <arquivo>(extensao .pas)
 * op_aditivo → + | - | or 
 * op_multiplicativo → * | / | and 
 
-### Regras (semantico)
+### Regras (Semântico)
 * ##### Regra um:
    * Em um mesmo escopo nao podera ser declarado identificadores com o mesmo nome; 
    * Identificadores ja declarados podem ser novamente declarados em escopos diferentes; 
